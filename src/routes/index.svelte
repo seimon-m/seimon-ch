@@ -1,5 +1,7 @@
 <script>
-	import logo from '$lib/assets/favicon.png';
+	import github from '$lib/assets/Github.png';
+	import linkedin from '$lib/assets/LinkedIn.png';
+	import mail from '$lib/assets/Mail.png';
 	import simon from '$lib/assets/simon-gross.webp';
 </script>
 
@@ -9,8 +11,8 @@
 </svelte:head>
 
 <div class="main">
-	<h1>Hey, I'm Simon</h1>
 	<div class="card">
+		<h1>Hey, I'm Simon</h1>
 		<div class="image">
 			<img class="simon" alt="Portrait of Simon Müller" src={simon} />
 		</div>
@@ -19,11 +21,14 @@
 			<p>For now, just get in touch:</p>
 		</div>
 		<div class="links">
-			<a class="mail" href="mailto:hey@seimon.ch">
-				<img alt="Mail Logo" src={logo} />
-			</a>
 			<a class="linkedin" href="https://www.linkedin.com/in/seimon-m">
-				<img alt="Linkedin Logo" src={logo} />
+				<img alt="LinkedIn Logo" src={linkedin} />
+			</a>
+			<a class="mail" href="mailto:hey@seimon.ch">
+				<img alt="Mail Logo" src={mail} />
+			</a>
+			<a class="github" href="https://github.com/seimon-m">
+				<img alt="GitHub Logo" src={github} />
 			</a>
 		</div>
 	</div>
@@ -36,28 +41,36 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
+		background-color: #533162;
 	}
 
 	h1 {
-		position: absolute;
+		color: #f9dbbd;
+		margin-left: 30px;
+		margin-top: 10px;
+	}
+
+	p {
+		color: #f9dbbd;
+		margin-left: 30px;
 	}
 
 	.card {
-		/* From https://css.glass */
-		background: rgba(255, 255, 255, 0.2);
+		background: rgba(243, 225, 225, 0.4);
 		border-radius: 16px;
 		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 		backdrop-filter: blur(5px);
 		-webkit-backdrop-filter: blur(5px);
-		border: 1px solid rgba(255, 255, 255, 0.3);
-		/* width: 80vw; */
-		/* height: 100vh; */
-		margin: 20px;
+		border: 1px solid rgba(243, 225, 225, 0.2);
+		width: auto;
+		height: auto;
+		margin: 10px;
 		padding: 10px;
 	}
 
 	.image {
-		margin: 30px;
+		margin: 10px 30px;
 	}
 
 	.links {
@@ -72,13 +85,12 @@
 	}
 
 	.links > a > img {
-		width: 40px;
-		height: 40px;
+		height: 30px;
 	}
 
 	.simon {
 		max-width: 80vw;
-		max-height: 55vh;
+		max-height: 60vh;
 		border-radius: 16px;
 	}
 </style>
