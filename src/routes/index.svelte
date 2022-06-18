@@ -1,5 +1,5 @@
 <script>
-	import github from '$lib/assets/Github.png';
+	import github from '$lib/assets/GitHub.png';
 	import linkedin from '$lib/assets/LinkedIn.png';
 	import mail from '$lib/assets/Mail.png';
 	import simon from '$lib/assets/simon-gross.webp';
