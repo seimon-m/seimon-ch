@@ -1,21 +1,21 @@
-import vercel from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-auto';
+import preprocess from 'svelte-preprocess';
 
-export default {
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	preprocess: preprocess({
+		replace: [
+			['import.meta.env.VERCEL_ANALYTICS_ID', JSON.stringify(process.env.VERCEL_ANALYTICS_ID)]
+		]
+	}),
 	kit: {
-		// default options are shown
-		adapter: vercel({
-			// if true, will deploy the app using edge functions
-			// (https://vercel.com/docs/concepts/functions/edge-functions)
-			// rather than serverless functions
-			edge: false,
+		adapter: adapter(),
 
-			// an array of dependencies that esbuild should treat
-			// as external when bundling functions
-			external: [],
-
-			// if true, will split your app into multiple functions
-			// instead of creating a single one for the entire app
-			split: false
-		})
+		// Override http methods in the Todo forms
+		methodOverride: {
+			allowed: ['PATCH', 'DELETE']
+		}
 	}
 };
+
+export default config;
